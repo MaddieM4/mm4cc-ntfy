@@ -10,7 +10,7 @@ services:
       - ./cache:/var/cache/ntfy
       - ./etc:/etc/ntfy
     ports:
-      - 8081:80
+      - ${PORT:-8081}:80
   tunnel:
     image: cloudflare/cloudflared
     env_file: ${SITE_MODE}.env
