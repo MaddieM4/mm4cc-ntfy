@@ -1,0 +1,6 @@
+# For more options, see https://docs.ntfy.sh/config/
+
+cache-file: /var/cache/ntfy/cache.db
+cache-duration: "12h"
+auth-file: /etc/ntfy/auth.db
+auth-default-access: "deny-all"
