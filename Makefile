@@ -1,8 +1,13 @@
+COMPOSE_COMMAND=$(shell \
+	which docker-compose > /dev/null \
+	&& echo 'docker-compose' \
+	|| echo 'docker compose')
+
 up: .env dev.env prod.env
-	docker compose up
+	$(COMPOSE_COMMAND) up
 
 down: .env dev.env prod.env
-	docker compose down
+	$(COMPOSE_COMMAND) down
 
 .env:
 	echo "SITE_MODE=dev" > .env
