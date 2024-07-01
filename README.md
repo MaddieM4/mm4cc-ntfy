@@ -14,6 +14,7 @@ in the upstream documentation, for example:
 ./ntfy token add maddie
 ```
 
-These commands only work if your instance is up, which you can do with either
-`docker-compose up` or `docker compose up` (no hyphen) depending on your exact
-installation of Docker/Compose.
+These commands only work if your instance is up, which you can do with `make up`.
+That command will also pre-populate your configs, although you'll want to edit
+`dev.env` and/or `prod.env` to have real CloudFlare ZeroConf tunnel tokens. You
+can switch the default mode by editing `.env`.

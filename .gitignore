@@ -1,2 +1,3 @@
 cache
 etc/auth.db
+*.env

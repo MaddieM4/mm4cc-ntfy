@@ -1,4 +1,4 @@
-name: mm4cc-ntfy-${SITE_MODE:-dev}
+name: mm4cc-ntfy-${SITE_MODE}
 services:
   svc:
     image: binwiederhier/ntfy
@@ -11,12 +11,8 @@ services:
       - ./etc:/etc/ntfy
     ports:
       - 8081:80
-  # cloudflared-tunnel:
-    # build: ./containers/tunnel
-    # restart: unless-stopped
-    # secrets:
-      # - tunnel-token
-
-# secrets:
-  # tunnel-token:
-    # file: secrets/tunnel-token-${SITE_MODE:-dev}.txt
+  tunnel:
+    image: cloudflare/cloudflared
+    env_file: ${SITE_MODE}.env
+    command: tunnel run
+    restart: unless-stopped
