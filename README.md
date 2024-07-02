@@ -18,3 +18,5 @@ These commands only work if your instance is up, which you can do with `make up`
 That command will also pre-populate your configs, although you'll want to edit
 `dev.env` and/or `prod.env` to have real CloudFlare ZeroConf tunnel tokens. You
 can switch the default mode by editing `.env`.
+
+To run in the background, try `make upd` instead of `make up`!

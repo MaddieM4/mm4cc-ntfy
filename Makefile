@@ -6,6 +6,9 @@ COMPOSE_COMMAND=$(shell \
 up: .env dev.env prod.env
 	$(COMPOSE_COMMAND) up
 
+upd:
+	$(COMPOSE_COMMAND) up -d
+
 down: .env dev.env prod.env
 	$(COMPOSE_COMMAND) down
 
